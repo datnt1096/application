@@ -1,0 +1,7 @@
+<%= form_with model: @comment, remote: true do |f| %>
+  <div class="field">
+    <%= hidden_field_tag :song_id, @song.id %>
+    <%= f.text_area :content, placeholder: t("comments.type") %>
+  </div>
+  <%= f.submit t("comments.post"), class: "btn btn-success" %>
+<% end %>

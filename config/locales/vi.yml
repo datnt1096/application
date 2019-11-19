@@ -1,0 +1,267 @@
+vi:
+  static_pages:
+    home:
+        for_you: Dành cho bạn
+        pre: Xem lại
+        next: Tiếp theo
+        album: Thể loại nghe nhiều
+        other: Ablum Khác
+        bxh: Chủ đề hot
+        chrismas_song: Nhạc giáng sinh
+        vnvd: Việt Nam vô địch
+  layouts:
+    application:
+      english: Tiếng Anh
+      vietnamese: Tiếng Việt
+      music_app: Ứng dụng nghe nhạc
+    header:
+      login: Đăng nhập
+      account: Tài khoản
+      playlist: Danh sách phát
+      search: Tìm kiếm...
+  application:
+    require_login: "Hãy đăng nhập"
+  playlists:
+    destroy:
+      playlists_deleted: "Danh sách phát đã được xóa"
+      playlist_created: "Danh sách phát mới tạo thành công"
+      delete_failed: "Lỗi xóa Danh sách phát"
+      playlist_updated: "Cập nhật Danh sách phát thành công."
+      you_sure: "Bạn có chắc chắn muốn xóa không?"
+    edit:
+      update_playlist: "Cập nhật Danh sách phát"
+    update:
+      playlist_updated: "Danh sách phát đã được cập nhật"
+      update_faild: "Cập nhật lỗi"
+    create:
+      success: "Tạo mới danh sách phát thành công"
+      failed: "Không tạo được playlist"
+    playlist:
+      you_sure: "Are you sure?"
+    index:
+      playlist: Danh sách phát
+    show:
+      no_song: "Không tìm thấy bài hát trong playlist, hãy chọn và thềm bài hát!"
+  sessions:
+    create:
+      invalid: Email hoặc mật khẩu không đúng
+    new:
+      login: Đăng nhập
+  shared:
+    error: Lỗi
+    playlist_form:
+      create: Tạo mới
+      enter_name: Nhập tên...
+      enter_description: Nhập chú thích...
+      create_new_playlist: Tạo danh sách phát mới
+    user_info:
+      playlist: Danh sách phát
+    edit_form:
+      save_change: Lưu thay đổi
+    list_playlist:
+      not_found: "Không tìm thấy playlist nào!"
+  users:
+    registrations:
+      new:
+        signup: Đăng ký
+        create_account: Tạo tài khoản
+        password_confirmation: Xác nhận mật khẩu
+    sessions:
+      new:
+        login: Đăng nhập
+    create:
+      success: Thành công
+    new:
+      create-account: Tạo tài khoản mới
+    show:
+      not_found: "Không có bài hát nào"
+
+  layouts:
+    application:
+      music_app: App nghe nhạc
+    header:
+      playlist: Danh sách phát
+      login: Đăng nhập
+      all_song: Bài hát
+      collection: Bộ sưu tập
+      upload: Tải lên
+      sign_up: Đăng kí
+      top_100: Top 100
+      vietnam: Việt Nam
+      us-uk: Âu Mĩ
+      asia: Châu Á
+      edm: EDM
+      acostic: Nhạc Acostic
+      year: 1970s
+      coffe: Cafe
+      album: Album
+      concert: Concert
+      artist: Nghệ sĩ
+      korea: Hàn Quốc
+      japan: Nhật Bản
+      icon-soundcloud: Icon soundcloud
+      search: Tìm kiếm bài hát...
+      account: Tài khoản
+      profile: Thông tin
+      setting: Cài đặt
+      logout: Đăng xuất
+      no_noti: Không có thông báo
+    footer:
+      footer: "@CopyRight 2019"
+    static_pages:
+      hot_topic: Chủ đề hot
+      hot_music: Nhạc hot
+
+  songs:
+    title: "Tiêu đề: "
+    post_at: "Thời gian đăng: "
+    view: "Lượt nghe: "
+    genres: "Thể loại: "
+    index:
+      all_songs: "Bài hát"
+      for_you: "Dành cho bạn"
+      cant_find: "Không tìm thấy kết quả"
+    new:
+      upload: Tải lên
+      confirm: Xác nhận
+    create:
+      success: "Tải lên thành công"
+      failed: "Tải lên thất bại"
+    show:
+      lyrics: "Lời: "
+      comments_count: "Nhận xét"
+      genres: Thể loại
+      select_pl: Lựa chọn danh sách phát
+      add_playlist: Thêm vào danh sách phát
+      for_you: "Bài hát cùng ca sĩ"
+    edit:
+      edit: "Chỉnh sửa bài hát"
+      save: "Lưu"
+    update:
+      success: "Update thành công"
+      failed: "Update thất bại"
+    destroy:
+      success: "Bài hát đã được xoá"
+      failed: "Không thể xoá bài hát"
+    correct_user:
+      no_permit: "Không có quyền"
+    song:
+        confirm: Bạn có chắc chắn không?
+        remove_playlist: Xóa khỏi danh sách
+    add_playlist:
+      select_playlist: Chọn danh sách phát
+      select: Chọn
+      not_found: "Tạo danh sách mới?"
+      add_playlist: "Tạo danh sách mới"
+      submit: "Xác nhận"
+    like:
+      btn_like: Thích
+    dislike:
+      btn_dislike: Bỏ thích
+    count_likes:
+      like_count: Lượt thích
+    form:
+      not_found: "Không tìm thấy ca sĩ? Bấm vào đây"
+
+  singers:
+    show:
+      singer: "Thông tin ca sĩ"
+      description: "Miêu tả: "
+      list-song: Danh sách bài hát
+
+  comments:
+    type: "Nhập nhận xét ..."
+    post: "Đăng"
+    count_comment:
+      comments_count: " Bình luận"
+    comment:
+      delete: "Xóa"
+      confirm: "Bạn có chắc chắn không"
+    create:
+      created: "Nhận xét được tạo"
+      failed: "Lỗi nhận xét"
+    destroy:
+      destroy: "Đã xóa nhận xét"
+      cant_destroy: "Không thể xóa nhận xét"
+
+  admin:
+    songs:
+      new:
+        confirm: Xác nhận
+        upload: Tải lên bài hát
+      create:
+        success: Tải lên thành công
+        failed: Tải lên lỗi
+      edit:
+        save: Lưu
+        edit: Sửa bài hát
+      update:
+        success: Bài hát đã được cập nhật
+        failed: Cập nhật lỗi
+      destroy:
+        success: Xóa thành công
+        failed: Xóa lỗi
+
+  playlist_songs:
+    create:
+      success: Đã thêm vào playlist
+      failed: Thêm vào playlist thất bại
+    destroy:
+      destroy: Bài hát đã xóa khỏi playlist
+      cant_destroy: Không thể xóa bài hát
+
+  notifications:
+    notification:
+      commented: "Ai đó đã bình luận bài hát của bạn"
+      liked: "Ai đó đã thích bài hát của bạn"
+
+  activerecord:
+    errors:
+      models:
+        song:
+          attributes:
+            title:
+              blank: "không được để trống"
+              too_long: "Tên bài hát quá dài"
+            song_url:
+              blank: "không được để trống"
+        singer:
+          attributes:
+            name:
+              too_long: "Tên ca sĩ quá dài"
+              taken: "Tên ca sĩ đã tồn tại"
+        user:
+          attributes:
+            name:
+              blank: "Tên không được để trống"
+              too_long: "Tên quá dài"
+            email:
+              blank: "Email không được để trống"
+              invalid: "Email không hợp lệ"
+              too_long: "Email quá dài"
+              taken: "Email đã tồn tại"
+            password:
+              blank: "Mật khẩu không được để trống"
+              too_short: "Mật khẩu quá ngắn"
+              too_long: "Mật khẩu quá dài"
+            password_confirmation:
+              confirmation: "Mật khẩu xác nhận không giống"
+
+  errors:
+    messages:
+      extension_whitelist_error: "Không đúng định dạng"
+
+  time:
+    formats:
+      default: "%d/%m/%Y"
+
+  out_of_size: "Không được vượt quá 5MB"
+
+  datetime:
+    distance_in_words:
+      x_days: "%{count} ngày trước"
+      x_minutes: "%{count} phút trước"
+      x_months: "%{count} tháng trước"
+      x_years: "%{count} năm trước"
+      x_seconds: "%{count} giây trước"
+      about_x_hours: "%{count} giờ trước"

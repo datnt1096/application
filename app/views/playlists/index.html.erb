@@ -1,0 +1,10 @@
+<% if user_signed_in? %>
+  <div class="row", style="min-height: 500px">
+    <div class="col-md-12">
+      <h3 class="mx-auto text-center text-white font-weight-bold w-50 py-4 pt-5">
+        <%= t ".playlist" %>
+      </h3>
+      <%= render "shared/list_playlist" %>
+    </div>
+  </div>
+<% end %>

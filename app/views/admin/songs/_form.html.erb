@@ -1,0 +1,17 @@
+<%= form_with model: [:admin, @song], local: true do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+
+  <%= f.label :title, class: "text-white" %>
+  <%= f.text_field :title, class: "form-control" %>
+
+  <%= f.label :song_url, class: "text-white" %>
+  <%= f.text_field :song_url, class: "form-control" %>
+
+  <%= f.label :lyrics, class: "text-white" %>
+  <%= f.text_field :lyrics, class: "form-control" %>
+
+  <%= f.label :singer, class: "text-white" %>
+  <%= f.collection_select :singer_id, Singer.order(:name), :id, :name ,class: "form-control", include_blank: true %>
+
+  <%= f.submit yield(:button_text), class: "btn btn-success" %>
+<% end %>
