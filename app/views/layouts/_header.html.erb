@@ -1,0 +1,67 @@
+<nav class="navbar nav-top navbar-expand-md sticky-top py-0">
+  <div class="container">
+    <%= link_to image_tag("soundcloud-icon.jpg", alt: (t ".icon-soundcloud"), height: 40, width: 70), root_url, class: "navbar-brand py-0" %>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarReponsive">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="div-collapse collapse navbar-collapse" id="navbarReponsive">
+      <ul class="navbar-nav h-100">
+        <li class="nav-item active">
+          <%= link_to t(".all_song"), songs_url, class: "nav-link home-link text-white h-100 pt-2 pl-4" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to t(".collection"), songs_url, class: "nav-link home-link collec-link text-white h-100 pt-2 pl-2" %>
+        </li>
+        <li class="active-pink-3 active-pink-4 mb-4 search-box">
+          <%= form_tag songs_path, method: :get do %>
+            <%= text_field_tag :search, params[:search], class: "search", placeholder: t(".search") %>
+            <%= submit_tag t(".search"), class: "search-button" %>
+          <% end %>
+        </li>
+        <% if current_user %>
+          <li class="nav-item active">
+            <%= link_to t(".upload"), new_song_path, class: "nav-link home-link text-white h-100 pt-2 pl-4" %>
+          </li>
+        <% else %>
+        <% end %>
+        <% if user_signed_in? %>
+          <li class="nav-item active">
+            <%= link_to t(".playlist"), playlists_path, class: "nav-link ds-list text-center home-link text-white h-100 pt-2 pl-4" %>
+          </li>
+          <li class="nav-item active dropdown">
+              <a href="#" data-toggle="dropdown">
+                <i class="fa fa-bell mt-2" aria-hidden="true"></i>
+              </a>
+              <ul class="dropdown-menu bg-dark">
+                <% if show_notifications.present? %>
+                  <%= render @notifications %>
+                <% else %>
+                  <span class="text-white"><%= t ".no_noti" %></span>
+                <% end %>
+              </ul>
+          </li>
+          <li class="dropdown">
+            <%= link_to "#", class: "dropdown-toggle account nav-link home-link text-white h-100 pt-2 pl-4",
+              data: {toggle: "dropdown"} do %>
+            <%= t ".account" %>
+            <% end %>
+            <ul class="dropdown-menu bg-dark">
+              <li><%= link_to t(".profile"), current_user, class: "mx-auto w-50 mx-auto text-white" %></li>
+              <li class="divider"></li>
+              <li>
+                <%= link_to t(".logout"), destroy_user_session_path, method: :delete, class: "mx-auto w-50 mx-auto text-white mt-2"%>
+              </li>
+            </ul>
+          </li>
+        <% else %>
+          <li class="nav-item active text-center">
+            <%= link_to t(".login"), new_user_session_path, class: "nav-link home-link text-white h-100 pt-2 pl-4 up-size" %>
+          </li>
+          <li class="nav-item active">
+            <%= link_to t(".sign_up"), new_user_registration_path, class: "nav-link home-link text-white h-100 pt-2 pl-4" %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</nav>

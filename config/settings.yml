@@ -1,0 +1,27 @@
+content:
+  max_length: 3000
+title:
+  max_length: 100
+email:
+  length: 50
+  case_sensitive: false
+pages:
+  per_page: 10
+  feed: 5
+user:
+  name:
+    length: 20
+  email:
+    length: 50
+    case_sensitive: false
+  password:
+    length: 6
+length_descript: 100
+length_name: 50
+gravatar_size: 50
+per_page: 10
+list_song: 10
+list_genre: 8
+list_song_slider: 3
+file_size: 5
+max_noti: 5

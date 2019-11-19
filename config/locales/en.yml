@@ -1,0 +1,254 @@
+en:
+  static_pages:
+    home:
+        for_you: Just for you
+        pre: Previous
+        next: Next
+        album: Genres Population
+        other: Other album
+        bxh: Hot Topic
+        chrismas_song: The chrismas song
+        vnvd: VietNam champion
+  layouts:
+    application:
+      english: English
+      vietnamese: Vietnamese
+      music_app: Music App
+    header:
+      login: Login
+      account: Account
+      playlist: Playlist
+      search: Search...
+  application:
+    require_login: Please log in.
+  playlists:
+    destroy:
+      playlist_deleted: "Playlist deleted."
+      playlist_created: "Playlist created!"
+      delete_failed: "Delete Failed."
+      playlist_updated: "Update success."
+      you_sure: "Are you sure?"
+    edit:
+      update_playlist: "Update your playlist"
+    update:
+      playlist_updated: "Playlist Updated"
+      update_faild: "Update fail"
+    create:
+      success: "Playlist created"
+      failed: "Failed"
+    playlist:
+      you_sure: "Are you sure?"
+    index:
+      playlist: Playlist
+    show:
+      no_song: "No song in playlist, please add!"
+  sessions:
+    create:
+      invalid: Invalid email or password
+    new:
+      login: Login
+  shared:
+    error: Error
+    playlist_form:
+      create: Create
+      enter_name: Enter name...
+      enter_description: Enter description...
+      create_new_playlist: Create new playlist
+    user_info:
+      playlist: Playlist
+    edit_form:
+      save_change: "Save change"
+    list_playlist:
+      not_found: "No playlist"
+  users:
+    registrations:
+      new:
+        signup: SignUp
+        create_account: Create Account
+        password_confirmation: Password Confirmation
+    sessions:
+      new:
+        login: Login
+    create:
+      success: Success
+    new:
+      create-account: Create new account
+    show:
+      not_found: "No Song! please add"
+
+  layouts:
+    application:
+      music_app: App nghe nhạc
+    header:
+      all_song: Songs
+      collection: Collection
+      upload: Upload
+      sign_up: Sign up
+      top_100: Top 100
+      vietnam: Vietnamese
+      us-uk: US-UK
+      asia: Asia
+      edm: EDM
+      acostic: Acostic Song
+      year: 1970s
+      coffe: Coffe
+      album: Album
+      concert: Concert
+      artist: Artist
+      korea: Korea
+      japan: Japan
+      icon-soundcloud: Icon soundcloud
+      playlist: Playlist
+      search: Search...
+      account: Account
+      profile: Profile
+      setting: Setting
+      logout: Logout
+      no_noti: No notification
+    footer:
+      footer: "@CopyRight 2019"
+    static_pages:
+      hot_topic: Hot topic
+      hot_music: Hot music
+
+  songs:
+    title: "Title: "
+    post_at: "Post At: "
+    view: "View: "
+    genres: "Genres: "
+    index:
+      all_songs: "Songs"
+      for_you: "Recommend for you"
+      cant_find: "Can't find any song"
+    new:
+      upload: Upload Song
+      confirm: Confirm
+    create:
+      success: "Upload success"
+      failed: "Upload failed"
+    edit:
+      edit: "Edit Song"
+      save: "Save"
+    update:
+      success: "Update success"
+      failed: "Update failed"
+    destroy:
+      success: "Song has been deleted"
+      failed: "Can't delete this song"
+    correct_user:
+      no_permit: "No permission"
+    show:
+      lyrics: "Lyrics: "
+      comments_count: " Comments"
+      select_pl: Choose your playlist
+      add_playlist: ADD TO PLAYLIST
+      genres: Genres
+      for_you: "Recommend for you"
+    song:
+      confirm: Are You Sure?
+      remove_playlist: Remove From Playlist
+      edit: Edit
+      delete: Delete
+    add_playlist:
+      select_playlist: Select playlist
+      select: Select
+      not_found: "Create playlist?"
+      add_playlist: "Create new playlist"
+      submit: "Submit"
+    like:
+      btn_like: Like
+    dislike:
+      btn_dislike: Dislike
+    count_likes:
+      like_count: Like
+    form:
+      not_found: "Singer not found? Click here"
+
+  singers:
+    show:
+      singer: "Singer Infomation"
+      description: "Description: "
+      list-song: List song
+
+  comments:
+    type: "Type comments here ..."
+    post: "Post"
+    count_comment:
+      comments_count: " Comments"
+    comment:
+      delete: "Delete"
+      confirm: "You sure ?"
+    create:
+      created: "Comment created"
+      failed: "Comment failed"
+    destroy:
+      destroy: "Comment deleted"
+      cant_destroy: "Can't delete comment"
+
+  admin:
+    songs:
+      new:
+        confirm: Confirm
+        upload: Upload song
+      create:
+        success: Song created
+        failed: Failed
+      edit:
+        save: Save
+        edit: Edit Song
+      update:
+        success: Song edited
+        failed: Failed
+      destroy:
+        success: Destroy Success
+        failed: Destroy Failed
+
+  playlist_songs:
+    create:
+      success: Added to playlist
+      failed: Failed
+    destroy:
+      destroy: Song has been removed from playlist
+      cant_destroy: Can't remove this song!
+
+  notifications:
+    notification:
+      commented: "Your song has been commented"
+      liked: "Your song has been liked"
+  out_of_size: "should be less than 5MB"
+
+  activerecord:
+    errors:
+      models:
+        song:
+          attributes:
+            title:
+              blank: "title can't be blank"
+              too_long: "title too long"
+            song_url:
+              blank: "song can't be blank"
+        singer:
+          attributes:
+            name:
+              too_long: "singer name too long"
+              taken: "singer name has been taken"
+        user:
+          attributes:
+            name:
+              blank: "user name can't be blank"
+              too_long: "too long"
+            email:
+              blank: "email can't be blank"
+              invalid: "email invalid"
+              too_long: "email too long"
+              taken: "email has been taken"
+            password:
+              blank: "password can't be blank"
+              too_short: "password too short"
+              too_long: "password too long"
+            password_confirmation:
+              confirmation: "confirmation doesn't match Password"
+
+  time:
+    formats:
+      default: "%d/%m/%Y"
