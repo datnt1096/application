@@ -23,7 +23,7 @@ class Song < ApplicationRecord
   validates :song_url, presence: true
   validates :view, numericality: true
   validate :img_size
-  validate :song_size
+  # validate :song_size
 
   scope :include_to_song, ->{includes :singer, :comments, :genres}
   scope :hot_feed, ->{order view: :desc}
