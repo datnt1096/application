@@ -30,8 +30,6 @@ class SongsController < ApplicationController
 
   def show
     @comment = current_user.comments.build if user_signed_in?
-    @playlists = current_user.playlists.order_desc if current_user
-                                                     &.playlists&.any?
   end
 
   def edit
@@ -51,8 +49,7 @@ class SongsController < ApplicationController
   end
 
   def destroy
-    if @song.comments.destroy_all && @song.playlist_songs.destroy_all &&
-      @song.genre_songs.destroy_all && @song.delete
+    if @song.comments.destroy_all && @song.genre_songs.destroy_all && @song.delete
       flash[:success] = t ".success"
     else
       flash[:danger] = t "failed"

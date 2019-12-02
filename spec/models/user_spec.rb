@@ -21,20 +21,6 @@ RSpec.describe User, type: :model do
     end
   end
 
-  context "associations" do
-    it "many_playlists" do
-      is_expected.to have_many :playlists
-    end
-
-    it "many_comments" do
-      is_expected.to have_many :comments
-    end
-
-    it "many_liked" do
-      is_expected.to have_many :liked
-    end
-  end
-
   context "columns" do
     it "have_name" do
       is_expected.to have_db_column :name
