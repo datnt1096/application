@@ -47,12 +47,6 @@
           </div>
         <% end %>
       </div>
-
-      <% if user_signed_in? %>
-        <%= link_to t(".add_playlist"), "#", class:
-          "btn btn-success text-capitalize", data: {toggle: "modal",
-          target: "#add_playlist"} %>
-      <% end %>
       <%= link_to t(".download"), @song.song_url.url,
         class: "btn btn-info text-capitalize", download: "#{@song.title}.mp3" %>
     </div>
@@ -112,27 +106,5 @@
       </div>
     </ul>
     <%= paginate @supports.comments, theme: "twitter-bootstrap-4" %>
-  </div>
-</div>
-
-<div class="modal fade" id="add_playlist" tabindex="-1" role="dialog"
-  aria-labelledby="login_or_apply" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content modal-add-playlist">
-      <div class="modal-header bg-theme1">
-        <h5 class="modal-title" id="login_or_apply">
-            <%= t ".select_pl" %>
-        </h5>
-        <button type="button" class="close" data-dismiss="modal"
-          aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <% if user_signed_in? %>
-          <%= render "add_playlist" %>
-        <% end %>
-      </div>
-    </div>
   </div>
 </div>

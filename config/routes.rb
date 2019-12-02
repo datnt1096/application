@@ -5,8 +5,6 @@ Rails.application.routes.draw do
   root "static_pages#home"
   resources :songs
   resources :singers
-  resources :playlists
-  resources :playlist_songs
   resources :users
   resources :singers
   resources :comments, only: %i(create destroy)

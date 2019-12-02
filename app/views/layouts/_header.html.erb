@@ -9,9 +9,6 @@
         <li class="nav-item active">
           <%= link_to t(".all_song"), songs_url, class: "nav-link home-link text-white h-100 pt-2 pl-4" %>
         </li>
-        <li class="nav-item">
-          <%= link_to t(".collection"), songs_url, class: "nav-link home-link collec-link text-white h-100 pt-2 pl-2" %>
-        </li>
         <li class="active-pink-3 active-pink-4 mb-4 search-box">
           <%= form_tag songs_path, method: :get do %>
             <%= text_field_tag :search, params[:search], class: "search", placeholder: t(".search") %>
@@ -25,9 +22,6 @@
         <% else %>
         <% end %>
         <% if user_signed_in? %>
-          <li class="nav-item active">
-            <%= link_to t(".playlist"), playlists_path, class: "nav-link ds-list text-center home-link text-white h-100 pt-2 pl-4" %>
-          </li>
           <li class="dropdown">
             <%= link_to "#", class: "dropdown-toggle account nav-link home-link text-white h-100 pt-2 pl-4",
               data: {toggle: "dropdown"} do %>

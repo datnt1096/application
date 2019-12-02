@@ -4,7 +4,6 @@ class User < ApplicationRecord
   enum role: {admin: 1, member: 0}
 
   has_many :songs, dependent: :destroy
-  has_many :playlists, dependent: :destroy
   has_many :comments
   has_many :liked, as: :likeable
 
