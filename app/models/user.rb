@@ -3,7 +3,6 @@ class User < ApplicationRecord
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   enum role: {admin: 1, member: 0}
 
-  has_many :songs, dependent: :destroy
   has_many :comments
   has_many :likeds
   has_many :liked_songs, through: :likeds, source: :likeable, source_type: "Song"

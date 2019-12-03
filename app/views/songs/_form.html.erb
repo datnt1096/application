@@ -37,5 +37,8 @@
     </div>
   </div>
 
+  <%= f.label :cost, class: "text-white" %>
+  <%= f.text_field :cost, class: "form-control" %>
+
   <%= f.submit yield(:button_text), class: "btn btn-success" %>
 <% end %>
