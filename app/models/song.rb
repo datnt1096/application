@@ -1,8 +1,7 @@
 class Song < ApplicationRecord
-  SONG_ATTRIBUTES = %i(singer_id title lyrics song_url view img_url user_id)
+  SONG_ATTRIBUTES = %i(singer_id title lyrics song_url view img_url user_id cost)
                     .push(singer_attributes: %i(name description)).freeze
 
-  belongs_to :user
   belongs_to :singer, optional: true
   accepts_nested_attributes_for :singer, reject_if: :all_blank
   has_many :liked, as: :likeable
@@ -21,7 +20,7 @@ class Song < ApplicationRecord
   validates :song_url, presence: true
   validates :view, numericality: true
   validate :img_size
-  # validate :song_size
+  validates :cost, numericality: true, allow_nil: true
 
   scope :include_to_song, ->{includes :singer, :comments, :genres}
   scope :hot_feed, ->{order view: :desc}
@@ -42,10 +41,5 @@ class Song < ApplicationRecord
   def img_size
     return if img_url.size <= Settings.file_size.megabytes
     errors.add :img_url, I18n.t(".out_of_size")
-  end
-
-  def song_size
-    return if song_url.size <= Settings.file_size.megabytes
-    errors.add :song_url, I18n.t(".out_of_size")
   end
 end

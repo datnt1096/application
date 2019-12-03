@@ -12,12 +12,12 @@ class SongsController < ApplicationController
   end
 
   def new
-    @song = current_user.songs.new
+    @song = Song.new
     @song.build_singer
   end
 
   def create
-    @song = current_user.songs.build song_params
+    @song = Song.new song_params
 
     if @song.save
       flash[:success] = t ".success"
@@ -84,7 +84,7 @@ class SongsController < ApplicationController
   def correct_user
     @song = Song.find_by id: params[:id]
 
-    return if current_user == @song.user
+    return if current_user.admin?
     flash[:danger] = t ".no_permit"
     redirect_to song_url
   end

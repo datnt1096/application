@@ -14,6 +14,8 @@ Singer.create! name: "Other", description: FFaker::Lorem.sentence(5)
 
 User.create! name: "ADMIN", password: "123456", email: "admin@gmail.com", role: 1
 
+User.create! name: "User", password: "123456", email: "user@gmail.com", role: 1
+
 Genre.create! title: "Pop"
 Genre.create! title: "Ballad"
 Genre.create! title: "Rock"

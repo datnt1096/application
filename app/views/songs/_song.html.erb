@@ -21,7 +21,7 @@
           <p class="song-title text-white">-</p>
           <p class="space"></p>
           <p class="song-title text-white">
-          <%= link_to song.name, song.singer %>
+          <%= song.name %> - <%= check_buy song %>
         <% end %>
         </p>
       </div>
@@ -35,7 +35,7 @@
         <%= t "songs.view" %>
         <%= song.view %>
       </p>
-      <% if song.user == current_user  %>
+      <% if current_user&.admin?  %>
         <%= link_to t(".edit"), edit_song_path(song), class: "btn btn-info" %>
         <%= link_to t(".delete"), song_path(song), class: "btn btn-danger",
           method: :delete, data: {confirm: t(".confirm")} %>

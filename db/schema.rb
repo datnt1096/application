@@ -67,18 +67,15 @@ ActiveRecord::Schema.define(version: 2019_12_03_023815) do
 
   create_table "songs", force: :cascade do |t|
     t.bigint "singer_id"
-    t.bigint "user_id"
     t.string "title"
     t.text "lyrics"
     t.string "song_url"
     t.string "img_url"
     t.integer "view", default: 0
-    t.boolean "free", default: true
     t.integer "cost"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["singer_id"], name: "index_songs_on_singer_id"
-    t.index ["user_id"], name: "index_songs_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
