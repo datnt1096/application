@@ -49,7 +49,7 @@ class SongsController < ApplicationController
   end
 
   def destroy
-    if @song.comments.destroy_all && @song.genre_songs.destroy_all && @song.delete
+    if @song.comments.destroy_all && @song.delete
       flash[:success] = t ".success"
     else
       flash[:danger] = t "failed"

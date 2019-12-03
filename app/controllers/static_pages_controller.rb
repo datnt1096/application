@@ -4,6 +4,6 @@ class StaticPagesController < ApplicationController
                       .page(params[:id]).per Settings.pages.feed
     @list_songs = Song.first(Settings.list_song)
     @list_song_slider = Song.last(Settings.list_song_slider)
-    @list_genres = Genre.first(Settings.list_genre)
+    @top_songs = Song.order(view: :desc).take 5
   end
 end

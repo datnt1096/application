@@ -19,13 +19,6 @@
         </h4>
       <% end %>
 
-      <% if @song.genres.any? %>
-        <span class="text-white"><%= t ".genres" %></span>
-        <span>
-          <%= render @supports.genres %>
-        </span>
-      <% end %>
-
       <h4 class="text-white">
         <%= t "songs.view" %>
         <%= @song.view %>

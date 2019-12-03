@@ -18,8 +18,4 @@ class Supports::SongSupport
   def list_songs
     @list_songs ||= @song.singer.songs.first Settings.list_song
   end
-
-  def genres
-    @song&.genres
-  end
 end

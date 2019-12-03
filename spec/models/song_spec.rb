@@ -36,10 +36,6 @@ RSpec.describe Song, type: :model do
     it "many_views_logs" do
       is_expected.to have_many :view_logs
     end
-
-    it "many_genres" do
-      is_expected.to have_many(:genres).through :genre_songs
-    end
   end
 
   context "columns" do

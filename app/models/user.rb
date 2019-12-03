@@ -4,7 +4,7 @@ class User < ApplicationRecord
   enum role: {admin: 1, member: 0}
 
   has_many :comments
-  has_many :likeds
+  has_many :likeds, dependent: :destroy
   has_many :liked_songs, through: :likeds, source: :likeable, source_type: "Song"
 
   validates :name, presence: true,

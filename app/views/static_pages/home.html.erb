@@ -34,7 +34,7 @@
 
 <div class="row mt-4">
   <div class="col-md-9">
-    <h3 class="text-white"><%= t ".album" %></h3>
+    <h3 class="text-white">Bảng xếp hạng</h3>
   </div>
   <div class="col-md-3">
     <h3 class="text-white"><%= t ".bxh" %></h3>
@@ -43,46 +43,7 @@
 
 <div class="row">
   <div class="col-md-9 list-genres">
-    <% @list_genres.each.with_index 0 do |list_genres, index| %>
-      <div class="card text-center mb-3 item" >
-        <% if index == 0 %>
-          <%= link_to genre_path list_genres.id do %>
-            <%= image_tag("pop", class: :avatar) %>
-          <% end %>
-        <% elsif index == 1 %>
-          <%= link_to genre_path list_genres.id do %>
-            <%= image_tag("cover", class: :avatar) %>
-          <% end %>
-        <% elsif index == 2 %>
-          <%= link_to genre_path list_genres.id do %>
-            <%= image_tag("rock", class: :avatar) %>
-          <% end %>
-        <% elsif index == 3 %>
-          <%= link_to genre_path list_genres.id do %>
-            <%= image_tag("nhachay", class: :avatar) %>
-          <% end %>
-        <% elsif index == 4 %>
-          <%= link_to genre_path list_genres.id do %>
-            <%= image_tag("muadong", class: :avatar) %>
-          <% end %>
-        <% elsif index == 5 %>
-          <%= link_to genre_path list_genres.id do %>
-            <%= image_tag("bolero", class: :avatar) %>
-          <% end %>
-        <% elsif index == 6 %>
-          <%= link_to genre_path list_genres.id do %>
-            <%= image_tag("duelts", class: :avatar) %>
-          <% end %>
-        <% else %>
-          <%= link_to genre_path list_genres.id do %>
-            <%= image_tag("img-playlist", class: :avatar) %>
-          <% end %>
-        <% end %>
-        <div class="card-body">
-          <%= link_to list_genres.title, genre_path(list_genres.id), class: "text-white" %>
-        </div>
-      </div>
-    <% end %>
+    <ul><%= render partial: "songs/song", collection: @top_songs, as: :song %></ul>
   </div>
   <aside class="col-md-3 hot-music">
     <%= link_to image_tag("hot-music.jpg", alt: (t ".hot_music"), height: 100, width: 260), @feed_items.present? ? song_path(@feed_items.first) : "#", class: "pb-3 asb" %>
