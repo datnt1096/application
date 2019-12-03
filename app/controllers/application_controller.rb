@@ -5,9 +5,8 @@ class ApplicationController < ActionController::Base
 
   def logged_in_user
     return if user_signed_in?
-
-    store_location_for(:user, request.fullpath)
-    flash[:danger] = t "users.require_login"
-    redirect_to new_user_session_path
+    store_location
+    flash[:danger] = t ".require_login"
+    redirect_to login_path
   end
 end
