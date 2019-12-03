@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_20_134312) do
+ActiveRecord::Schema.define(version: 2019_12_03_023815) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "buy_songs", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "song_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["song_id"], name: "index_buy_songs_on_song_id"
+    t.index ["user_id"], name: "index_buy_songs_on_user_id"
+  end
 
   create_table "comments", force: :cascade do |t|
     t.bigint "song_id"
@@ -58,14 +67,16 @@ ActiveRecord::Schema.define(version: 2018_12_20_134312) do
 
   create_table "songs", force: :cascade do |t|
     t.bigint "singer_id"
+    t.bigint "user_id"
     t.string "title"
     t.text "lyrics"
     t.string "song_url"
+    t.string "img_url"
     t.integer "view", default: 0
+    t.boolean "free", default: true
+    t.integer "cost"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "img_url"
-    t.bigint "user_id", default: 1
     t.index ["singer_id"], name: "index_songs_on_singer_id"
     t.index ["user_id"], name: "index_songs_on_user_id"
   end
@@ -82,18 +93,9 @@ ActiveRecord::Schema.define(version: 2018_12_20_134312) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
-  create_table "view_logs", force: :cascade do |t|
-    t.bigint "song_id"
-    t.string "log_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["song_id"], name: "index_view_logs_on_song_id"
-  end
-
   add_foreign_key "comments", "songs"
   add_foreign_key "comments", "users"
   add_foreign_key "genre_songs", "genres"
   add_foreign_key "genre_songs", "songs"
   add_foreign_key "songs", "singers"
-  add_foreign_key "view_logs", "songs"
 end

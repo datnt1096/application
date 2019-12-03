@@ -5,7 +5,8 @@ class User < ApplicationRecord
 
   has_many :songs, dependent: :destroy
   has_many :comments
-  has_many :liked, as: :likeable
+  has_many :likeds
+  has_many :liked_songs, through: :likeds, source: :likeable, source_type: "Song"
 
   validates :name, presence: true,
     length: {maximum: Settings.user.name.length}
