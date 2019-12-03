@@ -21,27 +21,6 @@ vi:
       search: Tìm kiếm...
   application:
     require_login: "Hãy đăng nhập"
-  playlists:
-    destroy:
-      playlists_deleted: "Danh sách phát đã được xóa"
-      playlist_created: "Danh sách phát mới tạo thành công"
-      delete_failed: "Lỗi xóa Danh sách phát"
-      playlist_updated: "Cập nhật Danh sách phát thành công."
-      you_sure: "Bạn có chắc chắn muốn xóa không?"
-    edit:
-      update_playlist: "Cập nhật Danh sách phát"
-    update:
-      playlist_updated: "Danh sách phát đã được cập nhật"
-      update_faild: "Cập nhật lỗi"
-    create:
-      success: "Tạo mới danh sách phát thành công"
-      failed: "Không tạo được playlist"
-    playlist:
-      you_sure: "Are you sure?"
-    index:
-      playlist: Danh sách phát
-    show:
-      no_song: "Không tìm thấy bài hát trong playlist, hãy chọn và thềm bài hát!"
   sessions:
     create:
       invalid: Email hoặc mật khẩu không đúng
@@ -75,6 +54,7 @@ vi:
       create-account: Tạo tài khoản mới
     show:
       not_found: "Không có bài hát nào"
+    require_login: "Yêu cầu đăng nhập!!!!!!!!!"
 
   layouts:
     application:
@@ -148,12 +128,6 @@ vi:
     song:
         confirm: Bạn có chắc chắn không?
         remove_playlist: Xóa khỏi danh sách
-    add_playlist:
-      select_playlist: Chọn danh sách phát
-      select: Chọn
-      not_found: "Tạo danh sách mới?"
-      add_playlist: "Tạo danh sách mới"
-      submit: "Xác nhận"
     like:
       btn_like: Thích
     dislike:
@@ -201,14 +175,6 @@ vi:
       destroy:
         success: Xóa thành công
         failed: Xóa lỗi
-
-  playlist_songs:
-    create:
-      success: Đã thêm vào playlist
-      failed: Thêm vào playlist thất bại
-    destroy:
-      destroy: Bài hát đã xóa khỏi playlist
-      cant_destroy: Không thể xóa bài hát
 
   notifications:
     notification:
