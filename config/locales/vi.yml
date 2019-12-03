@@ -96,7 +96,6 @@ vi:
     title: "Tiêu đề: "
     post_at: "Thời gian đăng: "
     view: "Lượt nghe: "
-    genres: "Thể loại: "
     index:
       all_songs: "Bài hát"
       for_you: "Dành cho bạn"
@@ -110,7 +109,6 @@ vi:
     show:
       lyrics: "Lời: "
       comments_count: "Nhận xét"
-      genres: Thể loại
       select_pl: Lựa chọn danh sách phát
       add_playlist: Thêm vào danh sách phát
       for_you: "Bài hát cùng ca sĩ"

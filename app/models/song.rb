@@ -7,8 +7,6 @@ class Song < ApplicationRecord
   has_many :liked, as: :likeable
   has_many :comments, dependent: :destroy
   has_many :view_logs
-  has_many :genre_songs, dependent: :destroy
-  has_many :genres, through: :genre_songs
 
   include PgSearch
 
@@ -22,7 +20,7 @@ class Song < ApplicationRecord
   validate :img_size
   validates :cost, numericality: true, allow_nil: true
 
-  scope :include_to_song, ->{includes :singer, :comments, :genres}
+  scope :include_to_song, ->{includes :singer, :comments}
   scope :hot_feed, ->{order view: :desc}
   scope :search_index, lambda{|search|
     if search

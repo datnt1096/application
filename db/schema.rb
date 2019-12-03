@@ -34,21 +34,6 @@ ActiveRecord::Schema.define(version: 2019_12_03_023815) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
-  create_table "genre_songs", force: :cascade do |t|
-    t.bigint "genre_id"
-    t.bigint "song_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["genre_id"], name: "index_genre_songs_on_genre_id"
-    t.index ["song_id"], name: "index_genre_songs_on_song_id"
-  end
-
-  create_table "genres", force: :cascade do |t|
-    t.string "title"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "likeds", force: :cascade do |t|
     t.bigint "user_id"
     t.integer "likeable_id"
@@ -91,7 +76,5 @@ ActiveRecord::Schema.define(version: 2019_12_03_023815) do
 
   add_foreign_key "comments", "songs"
   add_foreign_key "comments", "users"
-  add_foreign_key "genre_songs", "genres"
-  add_foreign_key "genre_songs", "songs"
   add_foreign_key "songs", "singers"
 end
