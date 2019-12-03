@@ -21,6 +21,27 @@ en:
       search: Search...
   application:
     require_login: Please log in.
+  playlists:
+    destroy:
+      playlist_deleted: "Playlist deleted."
+      playlist_created: "Playlist created!"
+      delete_failed: "Delete Failed."
+      playlist_updated: "Update success."
+      you_sure: "Are you sure?"
+    edit:
+      update_playlist: "Update your playlist"
+    update:
+      playlist_updated: "Playlist Updated"
+      update_faild: "Update fail"
+    create:
+      success: "Playlist created"
+      failed: "Failed"
+    playlist:
+      you_sure: "Are you sure?"
+    index:
+      playlist: Playlist
+    show:
+      no_song: "No song in playlist, please add!"
   sessions:
     create:
       invalid: Invalid email or password
@@ -40,6 +61,11 @@ en:
     list_playlist:
       not_found: "No playlist"
   users:
+    registrations:
+      new:
+        signup: SignUp
+        create_account: Create Account
+        password_confirmation: Password Confirmation
     sessions:
       new:
         login: Login
@@ -176,6 +202,14 @@ en:
       destroy:
         success: Destroy Success
         failed: Destroy Failed
+
+  playlist_songs:
+    create:
+      success: Added to playlist
+      failed: Failed
+    destroy:
+      destroy: Song has been removed from playlist
+      cant_destroy: Can't remove this song!
 
   notifications:
     notification:
