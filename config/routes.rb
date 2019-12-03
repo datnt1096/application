@@ -1,17 +1,12 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: {
-    sessions: "users/sessions"
-  }
   root "static_pages#home"
+  devise_for :users, controllers: {sessions: "users/sessions"}
   resources :songs
   resources :singers
-  resources :users
-  resources :singers
+  resources :users do
+    resources :likeds, only: :index, controller: "users/likeds"
+  end
   resources :comments, only: %i(create destroy)
   resources :genres
-  namespace :admin do
-    resources :songs, except: %i(index show)
-    resources :comments, except: %i(index show)
-  end
-  resources :likeds
+  resources :likeds, only: %i(create destroy)
 end
