@@ -12,7 +12,7 @@ class Supports::SongSupport
   end
 
   def liked
-    @liked ||= @song.liked.find_by user_id: @user.id if @user
+    @liked ||= @song.likeds.find_by user_id: @user.id if @user
   end
 
   def list_songs

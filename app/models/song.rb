@@ -4,7 +4,7 @@ class Song < ApplicationRecord
 
   belongs_to :singer, optional: true
   accepts_nested_attributes_for :singer, reject_if: :all_blank
-  has_many :liked, as: :likeable
+  has_many :likeds
   has_many :comments, dependent: :destroy
   has_many :view_logs
 

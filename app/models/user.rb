@@ -5,8 +5,7 @@ class User < ApplicationRecord
 
   has_many :comments
   has_many :likeds, dependent: :destroy
-  has_many :liked_songs, through: :likeds, source: :likeable, source_type: "Song"
-
+  has_many :liked_songs, through: :likeds, source: :song
   validates :name, presence: true,
     length: {maximum: Settings.user.name.length}
   validates :email, presence: true,
