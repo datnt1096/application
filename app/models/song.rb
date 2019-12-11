@@ -7,8 +7,9 @@ class Song < ApplicationRecord
   has_many :likeds
   has_many :comments, dependent: :destroy
   has_many :view_logs
+  has_many :buy_songs, dependent: :destroy
 
-  include PgSearch
+  include PgSearch::Model
 
   mount_uploader :img_url, ImgUrlUploader
   mount_uploader :song_url, SongUrlUploader

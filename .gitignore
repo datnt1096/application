@@ -38,3 +38,4 @@
 .rakeTasks
 
 .env
+app_access_token.txt
