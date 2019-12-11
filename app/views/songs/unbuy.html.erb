@@ -1,0 +1,64 @@
+<div class="content">
+  <div class="row mt-5">
+    <div class="col-3">
+      <% if @song.img_url.present? %>
+        <%= image_tag @song.img_url.url, class: "rounded w-100"%>
+      <% else %>
+        <%= image_tag "play_music_circle.png", class: "w-100 rotate-img"%>
+      <% end %>
+    </div>
+
+    <div class="col-6">
+      <h3 class="text-white">
+        <%= @song.title %> - <%= check_buy @song %>
+      </h3>
+
+      <% if @song.singer %>
+        <h4>
+          <%= link_to @song.singer.name, "javascript:void(0)" %>
+        </h4>
+      <% end %>
+
+      <h4 class="text-white">
+        <%= t "songs.view" %>
+        <%= @song.view %>
+      </h4>
+
+      <h5 class="text-white">
+        <%= t "songs.post_at" %>
+        <%= l @song.created_at %>
+      </h5>
+      <div class="mb-2">
+        <%= render "count_likes", song: @song %>
+        <% if user_signed_in? %>
+        <%= link_to "Mua ngay", buy_song_path(@song),
+          class: "btn btn-info text-capitalize", data: {confirm: "Bạn chắc chắn muốn mua?"} %>
+        <% else %>
+          <%= link_to "Đăng nhập để mua ngay!", new_user_session_path,
+            class: "btn btn-info text-capitalize" %>
+        <% end %>
+      </div>
+    </div>
+    <% if @song.singer %>
+      <aside class="col-md-3 hot-music">
+        <div class="just-for-u show-recommend">
+          <h5 class="title"><%= t ".for_you" %></h5>
+          <ul class="list-items">
+            <% @supports.list_songs.each do |list| %>
+              <li class="items d-flex align-items-center">
+                <% if list.img_url.url %>
+                  <%= link_to image_tag(list.img_url.url, class: "avatar"), song_path(list.id) %>
+                <% else %>
+                  <%= link_to image_tag("play", class: "avatar"), song_path(list.id) %>
+                <% end %>
+                <div class="present">
+                  <%= link_to list.title, song_path(list.id), class: "name" %>
+                </div>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      </aside>
+    <% end %>
+  </div>
+</div>

@@ -1,9 +1,8 @@
 class SongsController < ApplicationController
   before_action :correct_user, only: %i(update destroy)
-  before_action :find_song, only: %i(show edit update destroy)
+  before_action :find_song, only: %i(show edit update destroy buy)
   before_action :support, only: :show
   before_action :authenticate_user!, only: %i(new create)
-  after_action :increase_view, only: :show
 
   def index
     @songs = Song.search_index(params[:search])
@@ -30,6 +29,17 @@ class SongsController < ApplicationController
 
   def show
     @comment = current_user.comments.build if user_signed_in?
+
+    if @song.cost.present?
+      if user_signed_in? && current_user.member?
+        buy = current_user.buy_songs.find_by song_id: @song.id
+        return render :unbuy if buy.blank?
+      elsif user_signed_in? && current_user.admin?
+      else
+        render :unbuy
+      end
+    end
+    increase_view
   end
 
   def edit
@@ -55,6 +65,27 @@ class SongsController < ApplicationController
       flash[:danger] = t "failed"
     end
     redirect_to request.referrer || root_url
+  end
+
+  def buy
+    if @song.cost.present?
+      buy = current_user.buy_songs.find_by song_id: @song.id
+      if buy.present?
+        flash[:success] = "Bạn đã mua bài hát này trước đó."
+      else
+        data = {access_token: current_user.access_token, amount: @song.cost}
+        response = JSON.parse request_api(data, "buy", :Get)
+        if response["success"].present?
+          current_user.buy_songs.create song: @song
+          flash[:success] = response["success"]
+        else
+          flash[:danger] = response["error"]
+        end
+      end
+    else
+      flash[:success] = "Bài hát này miễn phí!"
+    end
+    redirect_to @song
   end
 
   private

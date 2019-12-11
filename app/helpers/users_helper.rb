@@ -5,11 +5,15 @@ module UsersHelper
   end
 
   def check_buy song
-    # if current_user
-    #   song.cost ? number_to_currency(song.cost, locale: :vn) : "Miễn phí"
-    # else
-    #   "Đã mua"
-    # end
-    song.cost ? number_to_currency(song.cost, precision: 0, unit: "đ") : "Miễn phí"
+    if song.cost.present?
+      if user_signed_in?
+        buy = current_user.buy_songs.find_by song_id: song.id
+        buy.present? ? "Đã mua" : number_to_currency(song.cost, precision: 0, unit: "đ")
+      else
+        number_to_currency(song.cost, precision: 0, unit: "đ")
+      end
+    else
+      "Miễn phí"
+    end
   end
 end
