@@ -1,5 +1,7 @@
 class User < ApplicationRecord
-  devise :database_authenticatable, :rememberable, :validatable
+  attr_accessor :skip_password_validation
+
+  devise :database_authenticatable, :rememberable, :validatable, :omniauthable
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   enum role: {admin: 1, member: 0}
 
@@ -18,9 +20,32 @@ class User < ApplicationRecord
 
   before_save :downcase_email
 
-  private
+  def self.from_omniauth auth
+    user = find_by email: auth[:info][:email]
+    params = {}
+    params[:name] = auth[:info][:name]
+    params[:image_url] = auth[:info][:image_url]
+    params[:access_token] = auth[:credentials][:token]
+    if user.present?
+      user.update params
+    else
+      params[:email] = auth[:info][:email]
+      user = new params
+      user.skip_password_validation = true
+      user.save
+    end
+    user
+  end
+
+  protected
 
   def downcase_email
     email.downcase!
   end
+
+  def password_required?
+    return false if skip_password_validation
+    super
+  end
 end
+
