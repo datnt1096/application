@@ -36,3 +36,5 @@
 .idea/
 .generators
 .rakeTasks
+
+.env

@@ -68,7 +68,10 @@ ActiveRecord::Schema.define(version: 2019_12_03_023815) do
     t.string "email"
     t.integer "role", default: 0
     t.string "encrypted_password", default: "", null: false
+    t.string "remember_token"
     t.datetime "remember_created_at"
+    t.string "access_token"
+    t.string "image_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true

@@ -25,6 +25,8 @@
           <%= f.submit t(".login"), class: "form-control btn btn-primary" %>
         </div>
       <% end %>
+      <%= link_to "Đăng nhập qua Oauth Server", user_framgia_omniauth_authorize_path,
+          class: "form-control btn btn-primary" %>
     </div>
   </div>
 </div>
