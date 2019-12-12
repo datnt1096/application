@@ -229,3 +229,4 @@ vi:
       x_years: "%{count} năm trước"
       x_seconds: "%{count} giây trước"
       about_x_hours: "%{count} giờ trước"
+      less_than_x_minutes: "ít hơn %{count} phút trước"

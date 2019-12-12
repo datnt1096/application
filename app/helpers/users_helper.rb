@@ -1,7 +1,7 @@
 module UsersHelper
   def gravatar_for user
-    gravatar_url = user.image_url.present? ? user.image_url : "avatar_icon.png"
-    image_tag(gravatar_url, alt: user.name, class: "gravatar")
+    gravatar_url = user.image_url.present? ? "#{ENV['OAUTH_SERVER']}#{user.image_url}" : "avatar_icon.png"
+    image_tag(gravatar_url, alt: user.name, class: "rounded-circle gravatar")
   end
 
   def check_buy song
