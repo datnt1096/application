@@ -35,7 +35,7 @@ class CommentsController < ApplicationController
   def correct_user
     @comment = Comment.find_by id: params[:id]
     @song = @comment.song
-    return if current_user == @comment.user || current_user == @song.user
+    return if current_user == @comment.user || current_user.admin?
     redirect_to root_url
   end
 end
