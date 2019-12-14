@@ -54,7 +54,6 @@ ActiveRecord::Schema.define(version: 2019_12_03_023815) do
     t.bigint "singer_id"
     t.string "title"
     t.text "lyrics"
-    t.string "song_url"
     t.string "img_url"
     t.integer "view", default: 0
     t.integer "cost"
