@@ -1,0 +1,21 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  timeout: 5000
+  username: root
+  password: admin
+
+development:
+  <<: *default
+  database: ruby_music_01_development
+test:
+  <<: *default
+  database: ruby_music_01_test
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  timeout: 5000
+  url: <%= ENV["DATABASE_URL"] %>

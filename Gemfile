@@ -24,6 +24,7 @@ gem "sass-rails", "~> 5.0"
 gem "uglifier", ">= 1.3.0"
 gem "omniauth-framgia"
 gem "dotenv-rails"
+gem "cloudinary"
 
 group :development, :test do
   gem 'pry', '~> 0.12.2'

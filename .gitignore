@@ -27,7 +27,6 @@
 /config/master.key
 
 /test
-/config/database.yml
 /public/uploads/
 
 # Ignore application configuration

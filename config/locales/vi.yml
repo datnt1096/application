@@ -112,6 +112,7 @@ vi:
       select_pl: Lựa chọn danh sách phát
       add_playlist: Thêm vào danh sách phát
       for_you: "Bài hát cùng ca sĩ"
+      download: "Download"
     edit:
       edit: "Chỉnh sửa bài hát"
       save: "Lưu"
